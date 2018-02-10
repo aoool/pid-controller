@@ -13,7 +13,7 @@ PID::~PID() {}
 void PID::Init(double Kp, double Ki, double Kd, unsigned int calc_tot_err_after, unsigned int tune_coeffs_each,
                double twiddle_dKp_initial, double twiddle_dKi_initial, double twiddle_dKd_initial,
                double twiddle_stops_when) {
-  // coeffs and errors
+  // coeffs. and errors
   this->Kp = Kp;
   this->Ki = Ki;
   this->Kd = Kd;

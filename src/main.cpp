@@ -35,13 +35,15 @@ int main(int argc, char *argv[])
 
   PID pid_steer;
 
-  // manually sarted with P=0.2 I=0.004 D=3.0 Throttle=0.3 passed
-  // twiddle 0.2, 0.004, 3.0, 30, 500, 0.1, 0.01, 1.0, 0.1
-  // twiddle 0.41, 0.02, 8.0, 30, 350, 0.1, 0.005, 1.0, 0.2
-  // twiddle 0.609, 0.015, 10.0, 30, 350, 0.1, 0.005, 1.0, 0.2
-  // double twiddle 0.61, 0.0155, 13.0, 30, 175, 0.1, 0.005, 1.0, 0.2; 2.0, 0.0, 3.0, 30, 150, 0.5, 0.005, 1.0, 0.1
-  // double twiddle 0.3, 0.015, 13.0, 30, 50, 0.1, 0.005, 1.0, 0.2; 2.5, 0.0, 6.0, 30, 175, 0.5, 0.005, 1.0, 0.1
-  // double twiddle 0.2, 0.0165, 7.0, 30, 0, 0.1, 0.005, 1.0, 0.2; 5.0, 0.0, 8.0, 30, 0, 0.5, 0.005, 1.0, 0.1
+  // How the parameters were tuned (manually + twiddle):
+  // steering: no twiddle -- P=0.2, I=0.004, D=3.0; throttle: fixed
+  // steering: twiddle -- P=0.2, I=0.004, D=3.0; throttle: fixed
+  // steering: twiddle -- P=0.41, I=0.02, D=8.0; throttle: fixed
+  // steering: twiddle -- P=0.609, I=0.015, D=10.0; throttle: fixed
+  // steering: twiddle -- P=0.61, I=0.0155, D=13.0; throttle: twiddle -- P=2.0, I=0.0, D=3.0
+  // steering: twiddle -- P=0.3, I=0.015, D=13.0; throttle: twiddle -- P=2.5, I=0.0, D=6.0
+  // steering: twiddle -- P=0.2, I=0.0165, D=7.0; throttle: twiddle P=5.0, I=0.0, D=8.0
+  // steering: no twiddle -- P=0.15, I=0.0165, D=5.0; throttle: no twiddle -- P=7.0, I=0.0, D=0.5
   pid_steer.Init(0.15, 0.0165, 5.0, 30, 0, 0.1, 0.005, 1.0, 0.2);
 
   PID pid_throttle;
