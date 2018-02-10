@@ -34,6 +34,8 @@ $> build/pid
 #### Demo
 ![ANIMATION](readme_images/simulator-demo.gif)
 
+[![LINK TO YOUTUBE](readme_images/video.png)](https://youtu.be/vs8lae_L3XY)
+
 
 #### Description
 The vehicle is controlled by two PID controllers. One of them takes the cross track error as an input and produces the correcting steering angle, while another one takes as an input maximum between absolute values of the cross track error and the steering angle and produces the throttle value. The latter should be responsive to changes of the parameters it depends on since it is reasonable to decrease speed either when the steering angle is steep or when there is a considerable cross track error. 
